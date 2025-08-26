@@ -86,13 +86,13 @@ return [
         // -------------------------------
         'mongodb' => [
             'driver'   => 'mongodb',
-            'host'     => env('MONGO_DB_HOST', '127.0.0.1'),
-            'port'     => env('MONGO_DB_PORT', 27017),
-            'database' => env('MONGO_DB_DATABASE', 'imsims_mongo'),
-            'username' => env('MONGO_DB_USERNAME', ''),
-            'password' => env('MONGO_DB_PASSWORD', ''),
+            'host'     => env('MONGODB_HOST', '127.0.0.1'),
+            'port'     => env('MONGODB_PORT', 27017),
+            'database' => env('MONGODB_DATABASE', 'inventory_logs'),
+            'username' => env('MONGODB_USERNAME', ''),
+            'password' => env('MONGODB_PASSWORD', ''),
             'options'  => [
-                'database' => env('MONGO_DB_AUTHENTICATION_DATABASE', 'admin'), // authentication db
+                'database' => env('MONGODB_AUTHENTICATION_DATABASE', 'admin'), // authentication db
             ],
         ],
 
