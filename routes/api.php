@@ -1,18 +1,14 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StoreController;
+use App\Http\Controllers\CategoryController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| These routes are for JSON APIs, separate from web pages.
-| They are automatically prefixed with /api in URLs.
-|
-*/
-
-// Example: GET http://127.0.0.1:8000/api/stores
-Route::get('/stores', [StoreController::class, 'index']);
+// Optionally protect APIs with sanctum auth
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('categories', [CategoryController::class, 'index']);
+    Route::post('categories', [CategoryController::class, 'store']);
+    Route::put('categories/{id}', [CategoryController::class, 'update']);
+    Route::delete('categories/{id}', [CategoryController::class, 'destroy']);
+    Route::get('categories/trashed', [CategoryController::class, 'trashed']);
+    Route::post('categories/{id}/restore', [CategoryController::class, 'restore']);
+});
