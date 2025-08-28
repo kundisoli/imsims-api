@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid, Store, Package, Boxes, Users2, CreditCard, ShoppingCart, Truck, BarChart3, Settings, HelpCircle, LogOut } from 'lucide-react';
+import {  Folder, LayoutGrid, Store, Package, Boxes, Users2, CreditCard, ShoppingCart, Truck, BarChart3, Settings, HelpCircle, LogOut } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [

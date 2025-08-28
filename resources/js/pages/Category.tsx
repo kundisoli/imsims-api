@@ -38,10 +38,12 @@ export default function Categories() {
 
  const fetchCategories = async () => {
   try {
-    // Add "await" and store the result in "res"
-    const res = await fetch('/api/categories', { headers: { Accept: 'application/json' } });
+    const res = await fetch('/api/categories', {
+      headers: { Accept: 'application/json' },
+    });
     if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
-    setCategories(await res.json());
+    const data = await res.json();
+    setCategories(data);
   } catch (err) {
     console.error('Failed to fetch categories:', err);
   }
