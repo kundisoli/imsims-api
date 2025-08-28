@@ -53,21 +53,21 @@ export default function Categories() {
     fetchCategories();
   }, []);
 
-  /** 🔹 Open edit modal */
+
   const openEdit = (cat: Category) => {
     setEditing(cat);
     setForm({ name: cat.name, description: cat.description });
     setModalOpen(true);
   };
 
-  /** 🔹 Reset modal */
+
   const resetModal = () => {
     setEditing(null);
     setForm({ name: '', description: '' });
     setModalOpen(false);
   };
 
-  /** 🔹 Save category */
+
   const handleSave = async () => {
     try {
       setLoading(true);
@@ -95,7 +95,6 @@ export default function Categories() {
     }
   };
 
-  /** 🔹 Delete category */
   const handleDelete = async (id: number) => {
     if (!confirm('Are you sure you want to delete this category?')) return;
     try {
@@ -113,7 +112,7 @@ export default function Categories() {
     }
   };
 
-  /** 🔹 Filter categories */
+
   const filtered = categories.filter(
     c =>
       c.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -167,7 +166,7 @@ export default function Categories() {
           </Dialog>
         </div>
 
-        {/* Categories List */}
+     
         <Card>
           <CardHeader>
             <CardTitle>All Categories</CardTitle>
